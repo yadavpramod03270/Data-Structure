@@ -1,0 +1,56 @@
+// Stack using Array
+#include<iostream>
+using namespace std;
+class stack_imp{
+    public:
+     int maxsize=100;
+     int top=-1;
+     int a[100];
+     void push(int e){
+         if(top==maxsize-1){
+             cout<<"stack overflow"<<endl;
+             return ;
+             
+         }
+         a[++top]=e;
+     }
+     void pop(){
+         if(top==-1){
+             cout<<"stack empty"<<endl;
+             return ;
+         }
+         top--;
+     }
+     int peek(){
+         if(top==-1){
+             cout<<"stack empty"<<endl;
+             return -1 ;
+         }
+         else{
+             return a[top];
+         }
+         
+     }
+     void display(){
+         if(top==-1){
+             cout<<"stack empty"<<endl;
+             return ;
+         }
+         for(int i=top; i>=0; i--){
+             cout<<a[i]<<endl;
+         }
+     }
+
+     
+};
+int main(){
+    stack_imp s;
+    s.push(5);
+    s.push(51);
+    s.push(25);
+    s.push(53);
+    s.pop();
+    s.display();
+    
+    return 0;
+}
